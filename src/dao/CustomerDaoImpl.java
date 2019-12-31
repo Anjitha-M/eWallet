@@ -37,7 +37,7 @@ public class CustomerDaoImpl implements ICustomerDao {
             bal = bal - amount;
             c1.setBalance(bal);
             double bal1 = c2.getBalance();
-            bal1 = bal + amount;
+            bal1 = bal1 + amount;
             c2.setBalance(bal1);
             System.out.println("Amount " + amount + " transferred from " + c1.getName() + " to " + c2.getName());
         }else {
