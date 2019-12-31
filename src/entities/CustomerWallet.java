@@ -40,17 +40,7 @@ public class CustomerWallet {
         this.balance = balance;
     }
 
-    public void transferAmount(CustomerWallet c, double amount) {
-        if (amount < balance) {
-            balance = balance - amount;
-            double bal = c.getBalance();
-            bal = bal + amount;
-            c.setBalance(bal);
-            System.out.println("Amount " + amount + " transferred from " + name + " to " + c.getName());
-        } else {
-            System.out.println("Insufficient balance to transfer");
-        }
-    }
+   
 
     @Override
     public boolean equals(Object o) {
