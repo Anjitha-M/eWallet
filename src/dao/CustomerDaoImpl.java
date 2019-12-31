@@ -31,6 +31,17 @@ public class CustomerDaoImpl implements ICustomerDao {
 
     @Override
     public void transferAmount(CustomerWallet c1, CustomerWallet c2, double amount) {
-        c1.transferAmount(c2, amount);
+        double bal = c1.getBalance();
+
+        if (amount < bal) {
+            bal = bal - amount;
+            c1.setBalance(bal);
+            double bal1 = c2.getBalance();
+            bal1 = bal + amount;
+            c2.setBalance(bal1);
+            System.out.println("Amount " + amount + " transferred from " + c1.getName() + " to " + c2.getName());
+        }else {
+            System.out.println("Insufficient balance to transfer");
+        }
     }
 }
